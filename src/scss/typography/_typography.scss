@@ -2,19 +2,89 @@
 @import "../partials/variables";
 
 body {
+  background-color: $mediumGrey;
+  color: $white;
+  font-family: $fontFamilyBody;
+  font-size: $fontBodyMobile; // 14px
+
+  @include respond-to(tablet) {
+    font-size: $fontBodyTablet; // 16px
+  }
+  @include respond-to(desktop) {
+    font-size: $fontBodyDesktop; // 16px
+  }
 }
 
 h1 {
+  font-size: 2.3077em; // ~30px
+  font-weight: $fontWeightRegular;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: $white;
+  letter-spacing: $letterSpacing7;
+  text-transform: uppercase;
+  
+  @include respond-to(tablet) {
+    font-size: 2.9375em; // ~47px
+  }
+  @include respond-to(desktop) {
+    font-size: 4.2778em; // ~77px
+  }
 }
 
 h2 {
+  font-size: 2em; // ~26px
+  font-weight: $fontWeightRegular;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: $tealBlue;
+  letter-spacing: $letterSpacing7;
+  text-transform: uppercase;
+  
+  @include respond-to(tablet) {
+    font-size: 2.25em; // ~36px
+  }
+  @include respond-to(desktop) {
+    font-size: 3.0556em; // ~55px
+  }
 }
 
 h3 {
+  font-size: 1.7692em; // ~23px
+  font-weight: $fontWeightRegular;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: $tealBlue;
+  letter-spacing: $letterSpacing6;
+  text-transform: uppercase;
+  
+  @include respond-to(tablet) {
+    font-size: 2.0625em; // ~33px
+  }
+  @include respond-to(desktop) {
+    font-size: 2.3889em; // ~43 px
+  }
 }
 
-h4 {
+// h4 {}
+
+h5 {
+  font-size: 1.1538em; // ~15px
+  font-weight: $fontWeightSemiBold;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: $white;
+  letter-spacing: $letterSpacing0;
+  text-transform: uppercase;
+  
+  @include respond-to(tablet) {
+    font-size: 1em; // ~16px
+  }
+  @include respond-to(desktop) {
+    font-size: 1.2222em; // ~22px
+  }
 }
 
-a {
-}
+// a {}
+
+// p {}

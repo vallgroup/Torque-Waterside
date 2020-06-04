@@ -1,5 +1,46 @@
 // colours
+$transparent: transparent;
+$white: #FFF;
+$white67pc: rgba(255,255,255,0.67);
+$black: #000;
+$black15pc: rgba(0,0,0,0.15);
+$tealBlue: #008ea9;
+$lightGrey: #54565b;
+$mediumGrey: #2b2b2c;
+$darkGrey: #202022;
 
 // breakpoints
 $MobileMaxWidth: 767px;
 $TabletMaxWidth: 1023px;
+
+// padding
+$bodyPadding0: 1vw;
+$bodyPadding1: 1.5vw;
+$bodyPadding2: 3vw;
+$bodyPadding3: 6vw;
+$bodyPadding4: 9vw;
+$bodyPadding5: 12vw;
+$bodyPadding6: 15vw;
+
+// font families
+$fontFamilyBody: 'Montserrat', sans-serif;
+
+// font sizes
+$fontBodyMobile: 13px;
+$fontBodyTablet: 16px;
+$fontBodyDesktop: 18px;
+
+// font weights
+$fontWeightRegular: 400;
+$fontWeightSemiBold: 500;
+$fontWeightBold: 700;
+
+// letter spacing
+$letterSpacing0: normal;
+$letterSpacing1: 0.65px;
+$letterSpacing2: 0.85px;
+$letterSpacing3: 1.10px;
+$letterSpacing4: 1.15px;
+$letterSpacing5: 1.35px;
+$letterSpacing6: 1.40px;
+$letterSpacing7: 2.00px;
