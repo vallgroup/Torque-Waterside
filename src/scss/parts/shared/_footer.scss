@@ -4,7 +4,7 @@ footer {
   .footer-container {
     width: 100%;
     box-sizing: border-box;
-    padding: $bodyPadding3 $bodyPadding2;
+    padding: $bodyPadding2 $bodyPadding3;
 
     @include respond-to(desktop) {
       display: flex;
@@ -33,6 +33,7 @@ footer {
           @include respond-to(desktop) {
             flex: 1;
             width: auto;
+            margin-bottom: 0;
           }
 
           // &.footer-col-one {}
@@ -50,6 +51,7 @@ footer {
       @include respond-to(desktop) {
         flex: 1;
         width: auto;
+        align-self: center;
       }
     }
   }

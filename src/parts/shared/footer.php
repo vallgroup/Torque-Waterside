@@ -3,7 +3,7 @@
  * Footer template
  */
 
-// data
+// get data
 $waterside_address = get_field( 'address', 'option' )
   ? strip_tags( get_field( 'address', 'option' ), '<br>, <p>' ) 
   : null;
@@ -12,6 +12,9 @@ $waterside_phone = get_field( 'phone', 'option' )
   : null;
 $waterside_email = get_field( 'email', 'option' )
   ? strip_tags( get_field( 'email', 'option' ) ) 
+  : null;
+$footer_alt_logo = get_field( 'alternate_logo', 'option' )
+  ? strip_tags( get_field( 'alternate_logo', 'option' ) ) 
   : null;
 
 ?>
@@ -60,9 +63,14 @@ $waterside_email = get_field( 'email', 'option' )
 
     </div>
 
-    <div class="footer-block-two">
-      (ALT LOGO)
-    </div>
+    <?php if ( $footer_alt_logo ) { ?>
+      <div class="footer-block-two">
+        <img
+          src=<?php echo $footer_alt_logo; ?>
+          alt="Logo"
+        />
+      </div>
+    <?php } ?>
 
   </div>
 
