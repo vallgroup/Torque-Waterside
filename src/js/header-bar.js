@@ -47,7 +47,7 @@
     function addRemoveOverlay() {
       if (headerContent.hasClass("active")) {
         // Create and show the menu overlay
-        headerMenuItemsContainer.append(menuOverlayHTML);
+        bodyContainer.append(menuOverlayHTML);
         $(menuOverlayClass).animate(
           { opacity: 0.67 },
           150
