@@ -1,0 +1,83 @@
+%hideOnDesktop {
+  @include respond-to(desktop) {
+    display: none !important;
+  }
+} 
+%hideOnTablet {
+  @media only screen and (max-width: $TabletMaxWidth) and (min-width: $MobileMaxWidth + 1px) {
+    display: none !important;
+  }
+}
+%hideOnMobile {
+  @include respond-to-max(tablet) {
+    display: none !important;
+  }
+}
+
+%imageSize {
+  position: relative;
+  padding-bottom: 80%;
+  width: 100%;
+  height: 0;
+
+  @include respond-to(tablet) {
+    padding-bottom: 56%;
+  }
+
+  @include respond-to(desktop) {
+    padding-bottom: 67%;
+  }
+}
+
+%imageSizeHalf {
+  position: relative;
+  padding-bottom: 65%;
+  width: 100%;
+  height: 0;
+
+  @include respond-to(tablet) {
+    padding-bottom: 45%;
+  }
+
+  @include respond-to(desktop) {
+    padding-bottom: 35%;
+  }
+}
+
+%imageInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+// content CTA link
+%useContentCTA {
+  position: relative;
+  display: block;
+  font-weight: $fontWeightRegular;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 4vw;
+  margin-bottom: 2vw;
+  transition: 0.2s;
+
+  &:after {
+    content: '';
+    position: absolute;
+    background-color: blue;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: -10px;
+    // width: 98px;
+    // height: 170px;
+    // background-image: linear-gradient(to bottom, var(--teal-blue) 43%, rgba(0, 159, 198, 0) 88%);
+  }
+}

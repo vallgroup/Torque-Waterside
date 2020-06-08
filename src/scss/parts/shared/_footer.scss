@@ -20,6 +20,10 @@ footer {
         text-align: left;
       }
 
+      .footer-logo-container {
+        margin-bottom: 34px;
+      }
+
       .footer-container-inner {
 
         @include respond-to(desktop) {
@@ -38,7 +42,9 @@ footer {
 
           // &.footer-col-one {}
           // &.footer-col-two {}
-          // &.footer-col-three {}
+          &.footer-col-three {
+            flex: 0.6;
+          }
         }
         
       }

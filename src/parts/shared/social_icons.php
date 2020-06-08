@@ -13,6 +13,7 @@
   ?>
     <a 
       href="<?php echo strip_tags( $url ); ?>"
+      target="_blank"
       class="social-icon">
       <img 
         src="<?php echo $icon; ?>"

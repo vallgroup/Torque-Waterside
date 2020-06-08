@@ -1,29 +1,33 @@
 // Pass true or false for $removeHeaderHeight to remove or add height
 @mixin useHeaderHeight($property: height, $removeHeaderHeight: false, $isFixed: false) {
-
+  
+  // defaults...
   // add header height, and not fixed
-  $mobileHeight: 95px;
-  $tabletHeight: 120px;
-  $desktopHeight: 180px;
+  $mobileHeight: 90px;
+  $tabletHeight: 100px;
+  $desktopHeight: 110px;
 
   // otherwise...
   @if $removeHeaderHeight == true {
     @if $isFixed == true {
-      $mobileHeight: -75px;
-      $tabletHeight: -100px;
-      $desktopHeight: -150px;
+      // remove header height, and is fixed
+      $mobileHeight: -85px;
+      $tabletHeight: -95px;
+      $desktopHeight: -100px;
     }
     @else {
-      $mobileHeight: -95px;
-      $tabletHeight: -120px;
-      $desktopHeight: -180px;
+      // remove header height, and not fixed
+      $mobileHeight: -90px;
+      $tabletHeight: -100px;
+      $desktopHeight: -110px;
     }
   }
   @else {
     @if $isFixed == true {
-      $mobileHeight: 75px;
-      $tabletHeight: 100px;
-      $desktopHeight: 150px;
+      // add header height, and is fixed
+      $mobileHeight: 85px;
+      $tabletHeight: 95px;
+      $desktopHeight: 100px;
     }
   }
 

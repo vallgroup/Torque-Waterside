@@ -24,8 +24,10 @@ $footer_alt_logo = get_field( 'alternate_logo', 'option' )
   <div class="footer-container">
 
     <div class="footer-block-one">
-      
-      <?php get_template_part( 'parts/shared/logo', 'white' ); ?>
+    
+      <div class="footer-logo-container">
+        <?php get_template_part( 'parts/shared/logo', 'white' ); ?>
+      </div>
 
       <div class="footer-container-inner">
         <div class="footer-inner-col footer-col-one">

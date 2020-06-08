@@ -1,0 +1,23 @@
+.page-hero {
+  position: relative;
+
+  @include useHeaderHeight(margin-top, true);
+
+  .type-image,
+  .type-video-external,
+  .type-video-internal {
+    @extend %imageSize;
+
+    .hero-image {
+      @extend %imageInner;
+    }
+  }
+
+  .hero-title {
+    position: absolute;
+    // adds the header height value to the selected attribute ('top' in this case)
+    @include useHeaderHeight(top);
+    right: $bodyPadding3;
+    margin-top: $bodyPadding1;
+  }
+}

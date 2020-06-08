@@ -1,7 +1,20 @@
 header#header-style-1 {
-  .torque-header-content-wrapper {
+  z-index: 998;
 
+  .torque-header-content-wrapper {
+    @include useHeaderHeight(height, false);
+    @include useHeaderPadding();
+  
+    .torque-header-logo-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40%;
+    }
+    
     .torque-header-burger-menu-wrapper {
+      width: 60%;
+
       @include respond-to(desktop) {
         display: none;
       }
@@ -10,7 +23,7 @@ header#header-style-1 {
         right: 16px;
         top: 16px;
         transform: translateY(-100%);
-        z-index: 99;
+        z-index: 1000;
 
         .torque-burger-menu-line {
           background-color: $white;
@@ -19,8 +32,18 @@ header#header-style-1 {
     }
 
     .torque-header-menu-items-inline-wrapper {
+      height: 100%;
+      width: 60%;
+
       @include respond-to-max(desktop) {
         display: none;
+      }
+
+      .torque-menu-items-inline {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100%;
       }
     }
   }
@@ -29,6 +52,7 @@ header#header-style-1 {
     right: 0;
     left: unset;
     width: auto;
+    z-index: 999;
 
     @include respond-to(desktop) {
       display: none;
@@ -72,30 +96,11 @@ header#header-style-1 {
         }
       }
     }
-
-    .menu-overlay {
-      display: block;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100vw;
-
-      opacity: 0;
-      background-color: $black15pc;
-      transition: 0.2s;
-
-      z-index: -2;
-
-      @include respond-to(desktop) {
-        display: none;
-      }
-    }
   }
 }
 
-// fixed header on scroll (logic to add .is-scrolled located in header-bar.js)
 body {
+  /* fixed header on scroll (logic to add .is-scrolled located in header-bar.js) */
   &.is-scrolled {
     &:not(.include-header-background) {
       header#header-style-1 {
@@ -103,18 +108,37 @@ body {
       }
     }
   }
-
   &.is-fixed {
     header#header-style-1 {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
+      width: 100%;
   
       .torque-header-content-wrapper {
         @include useHeaderHeight(height, false, true); // NB last param for isFixed
         @include useHeaderPadding(true); // NB last param for isFixed
       }
+    }
+  }
+
+  /* menu overlay */
+  .menu-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    opacity: 0;
+    background-color: $black15pc;
+    transition: 0.2s;
+
+    z-index: 997;
+
+    @include respond-to(desktop) {
+      display: none;
     }
   }
 }

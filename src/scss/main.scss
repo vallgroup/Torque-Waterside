@@ -2,11 +2,11 @@
 
 @import 'grid';
 
-//
+// typography
 @import 'typography/typography';
 
 // extends
-// ...
+@import 'partials/extends';
 
 // mixins
 @import 'partials/mixins/header';
@@ -14,4 +14,9 @@
 // shared
 @import 'parts/shared/social-icons';
 @import 'parts/shared/header-templates/header-style-1';
+@import 'parts/shared/page-hero';
 @import 'parts/shared/footer';
+
+// acf
+@import 'parts/acf/content-spacer';
+@import 'parts/acf/image-title-text-cta-container';
