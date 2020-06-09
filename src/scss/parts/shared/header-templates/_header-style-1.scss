@@ -10,6 +10,11 @@ header#header-style-1 {
       justify-content: center;
       align-items: center;
       width: 40%;
+
+      a, div, img {
+        width: 100%;
+        max-width: 376px;
+      }
     }
     
     .torque-header-burger-menu-wrapper {
@@ -101,19 +106,14 @@ header#header-style-1 {
 
 body {
   /* fixed header on scroll (logic to add .is-scrolled located in header-bar.js) */
-  &.is-scrolled {
-    &:not(.include-header-background) {
-      header#header-style-1 {
-        background-color: $transparent;
-      }
-    }
-  }
+  // &.is-scrolled {}
   &.is-fixed {
     header#header-style-1 {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
+      background-color: $mediumGrey90pc !important;
   
       .torque-header-content-wrapper {
         @include useHeaderHeight(height, false, true); // NB last param for isFixed

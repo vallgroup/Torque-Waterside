@@ -14,7 +14,7 @@ if ( have_rows( $modules ) ) :
 
     switch ( get_row_layout() ) {
 
-      /* case 'content_spacer' :
+      case 'content_spacer' :
 
         // options
         $spacer_height = get_sub_field( 'spacer_height' );
@@ -23,7 +23,7 @@ if ( have_rows( $modules ) ) :
 
         include locate_template( $modules_path . 'content-spacer.php' );
 
-        break; */
+        break;
 
       case 'image_title_text_cta' :
 
@@ -35,6 +35,27 @@ if ( have_rows( $modules ) ) :
         $cta        = get_sub_field( 'cta' );
 
         include locate_template( $modules_path . 'image-title-text-cta.php' );
+
+        break;
+
+      case 'cta_banner' :
+
+        // options
+        $title      = get_sub_field( 'title' );
+        $cta        = get_sub_field( 'cta' );
+
+        include locate_template( $modules_path . 'cta-banner.php' );
+
+        break;
+
+      case 'title_text' :
+
+        // options
+        $title        = get_sub_field( 'title' );
+        $title_color  = get_sub_field( 'title_color' );
+        $text         = get_sub_field( 'text' );
+
+        include locate_template( $modules_path . 'title-text.php' );
 
         break;
 

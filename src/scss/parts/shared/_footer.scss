@@ -1,5 +1,6 @@
 footer {
   display: flex;
+  background-color: $lightGrey;
 
   .footer-container {
     width: 100%;
@@ -22,6 +23,15 @@ footer {
 
       .footer-logo-container {
         margin-bottom: 34px;
+        max-width: 376px;
+        
+        a {
+          display: block;
+
+          img {
+            width: 100%;
+          }
+        }
       }
 
       .footer-container-inner {
@@ -40,13 +50,23 @@ footer {
             margin-bottom: 0;
           }
 
-          // &.footer-col-one {}
-          // &.footer-col-two {}
+          &.footer-col-one {
+            .footer-cta {
+              @extend %useButton;
+              margin-top: 1.5em;
+            }
+          }
+          &.footer-col-two {
+            .contact-info {
+              &:not(:last-child) {
+                margin-bottom: 1em;
+              }
+            }
+          }
           &.footer-col-three {
             flex: 0.6;
           }
         }
-        
       }
     }
 

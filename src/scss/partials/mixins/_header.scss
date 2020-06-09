@@ -3,30 +3,30 @@
   
   // defaults...
   // add header height, and not fixed
-  $mobileHeight: 90px;
-  $tabletHeight: 100px;
+  $mobileHeight: 50px;
+  $tabletHeight: 50px;
   $desktopHeight: 110px;
 
   // otherwise...
   @if $removeHeaderHeight == true {
     @if $isFixed == true {
       // remove header height, and is fixed
-      $mobileHeight: -85px;
-      $tabletHeight: -95px;
+      $mobileHeight: -45px;
+      $tabletHeight: -45px;
       $desktopHeight: -100px;
     }
     @else {
       // remove header height, and not fixed
-      $mobileHeight: -90px;
-      $tabletHeight: -100px;
+      $mobileHeight: -50px;
+      $tabletHeight: -50px;
       $desktopHeight: -110px;
     }
   }
   @else {
     @if $isFixed == true {
       // add header height, and is fixed
-      $mobileHeight: 85px;
-      $tabletHeight: 95px;
+      $mobileHeight: 45px;
+      $tabletHeight: 45px;
       $desktopHeight: 100px;
     }
   }

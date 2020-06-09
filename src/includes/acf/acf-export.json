@@ -18,7 +18,7 @@
                 },
                 "message": "",
                 "default_value": 1,
-                "ui": 1,
+                "ui": 0,
                 "ui_on_text": "",
                 "ui_off_text": ""
             },
@@ -45,7 +45,7 @@
                 },
                 "choices": {
                     "image": "Image",
-                    "video-external": "Video (External)",
+                    "video-external": "Video (Vimeo)",
                     "video-internal": "Video (Internal)"
                 },
                 "default_value": [
@@ -57,6 +57,25 @@
                 "ajax": 0,
                 "return_format": "value",
                 "placeholder": ""
+            },
+            {
+                "key": "field_5ee015b67a17f",
+                "label": "Title",
+                "name": "title",
+                "type": "text",
+                "instructions": "Override the page title by entering text into this field.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
             },
             {
                 "key": "field_5ede11fb4cf17",
@@ -75,12 +94,12 @@
                     ]
                 ],
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
                 "return_format": "url",
-                "preview_size": "thumbnail",
+                "preview_size": "medium",
                 "library": "all",
                 "min_width": "",
                 "min_height": "",
@@ -92,10 +111,10 @@
             },
             {
                 "key": "field_5ede12284cf18",
-                "label": "Video (External)",
+                "label": "Video (Vimeo)",
                 "name": "video_external",
                 "type": "url",
-                "instructions": "",
+                "instructions": "Do not use the embed code. Simply copy the Vimeo video URL directly from the browser's URL bar, and paste into the field provided.",
                 "required": 0,
                 "conditional_logic": [
                     [
@@ -107,12 +126,12 @@
                     ]
                 ],
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
                 "default_value": "",
-                "placeholder": ""
+                "placeholder": "E.g: https:\/\/vimeo.com\/395979637"
             },
             {
                 "key": "field_5ede13054cf19",
@@ -131,7 +150,7 @@
                     ]
                 ],
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
@@ -140,6 +159,57 @@
                 "min_size": "",
                 "max_size": "",
                 "mime_types": "mp4"
+            },
+            {
+                "key": "field_5ededf76deda6",
+                "label": "Hero Mask",
+                "name": "hero_mask",
+                "type": "color_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5ede11a94cf15",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": ""
+            },
+            {
+                "key": "field_5edee25cd7f5e",
+                "label": "Hero Mask Opacity",
+                "name": "hero_mask_opacity",
+                "type": "range",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5ede11a94cf15",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "0.50",
+                "min": "",
+                "max": 1,
+                "step": "0.05",
+                "prepend": "",
+                "append": ""
             },
             {
                 "key": "field_5ede14dfece0e",
@@ -165,7 +235,7 @@
                     ]
                 ],
                 "wrapper": {
-                    "width": "50",
+                    "width": "25",
                     "class": "",
                     "id": ""
                 },
@@ -199,7 +269,7 @@
                     ]
                 ],
                 "wrapper": {
-                    "width": "50",
+                    "width": "25",
                     "class": "",
                     "id": ""
                 },
@@ -320,6 +390,21 @@
                 },
                 "placement": "left",
                 "endpoint": 0
+            },
+            {
+                "key": "field_5edec0ebe470e",
+                "label": "CTA",
+                "name": "footer_cta",
+                "type": "link",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array"
             },
             {
                 "key": "field_5ed879b614a70",
@@ -462,6 +547,96 @@
                     "id": ""
                 },
                 "layouts": {
+                    "layout_5ee00e90724ed": {
+                        "key": "layout_5ee00e90724ed",
+                        "name": "content_spacer",
+                        "label": "Content Spacer",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_5ee00e99724ee",
+                                "label": "Spacer Height",
+                                "name": "spacer_height",
+                                "type": "number",
+                                "instructions": "Enter only a number, either negative or positive.",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": 3,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "min": "",
+                                "max": "",
+                                "step": ""
+                            },
+                            {
+                                "key": "field_5ee00f32724ef",
+                                "label": "Spacer Measurement",
+                                "name": "spacer_measurement",
+                                "type": "select",
+                                "instructions": "Select measurement used to calculate spacer height.",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "px": "Pixels (px)",
+                                    "vw": "Percentage of viewport width (vw)",
+                                    "vh": "Percentage of viewport height (vh)"
+                                },
+                                "default_value": [
+                                    "vw"
+                                ],
+                                "allow_null": 0,
+                                "multiple": 0,
+                                "ui": 1,
+                                "ajax": 0,
+                                "return_format": "value",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_5ee00f98724f0",
+                                "label": "Visibility",
+                                "name": "visibility",
+                                "type": "select",
+                                "instructions": "Choose which devices you'd like to display the spacer on.",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "all_devices": "All Devices",
+                                    "mobile_only": "Mobile Only",
+                                    "tablet_only": "Tablet Only",
+                                    "desktop_only": "Desktop Only",
+                                    "mobile_tablet": "Mobile & Tablet",
+                                    "tablet_desktop": "Tablet & Desktop"
+                                },
+                                "default_value": [
+                                    "all_devices"
+                                ],
+                                "allow_null": 0,
+                                "multiple": 0,
+                                "ui": 1,
+                                "ajax": 0,
+                                "return_format": "value",
+                                "placeholder": ""
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
                     "5edde31c428fd": {
                         "key": "5edde31c428fd",
                         "name": "image_title_text_cta",
@@ -571,6 +746,125 @@
                                     "id": ""
                                 },
                                 "return_format": "array"
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "layout_5edef7cf22dfb": {
+                        "key": "layout_5edef7cf22dfb",
+                        "name": "cta_banner",
+                        "label": "CTA Banner",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_5edef7d622dfc",
+                                "label": "Title",
+                                "name": "title",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5edef7dc22dfd",
+                                "label": "CTA",
+                                "name": "cta",
+                                "type": "link",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "array"
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "layout_5ee0043b724ec": {
+                        "key": "layout_5ee0043b724ec",
+                        "name": "title_text",
+                        "label": "Title & Text",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_5ee0147a0ebf4",
+                                "label": "Title",
+                                "name": "title",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5ee0176d1da60",
+                                "label": "Title Color",
+                                "name": "title_color",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "white": "White",
+                                    "teal": "Teal"
+                                },
+                                "default_value": [
+                                    "white"
+                                ],
+                                "allow_null": 0,
+                                "multiple": 0,
+                                "ui": 1,
+                                "ajax": 0,
+                                "return_format": "value",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_5ee0148b0ebf5",
+                                "label": "Text",
+                                "name": "text",
+                                "type": "textarea",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "100",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "maxlength": "",
+                                "rows": "",
+                                "new_lines": ""
                             }
                         ],
                         "min": "",

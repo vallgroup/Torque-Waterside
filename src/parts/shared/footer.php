@@ -16,6 +16,7 @@ $waterside_email = get_field( 'email', 'option' )
 $footer_alt_logo = get_field( 'alternate_logo', 'option' )
   ? strip_tags( get_field( 'alternate_logo', 'option' ) ) 
   : null;
+$footer_cta = get_field( 'footer_cta', 'option' );
 
 ?>
 
@@ -31,27 +32,41 @@ $footer_alt_logo = get_field( 'alternate_logo', 'option' )
 
       <div class="footer-container-inner">
         <div class="footer-inner-col footer-col-one">
+          
           <h5 class="footer-col-title">Visit</h5>
+          
           <?php if ( $waterside_address ) { ?>
             <div class="location-info">
               <a 
                 href="https://maps.google.com/?q=<?php echo urlencode( strip_tags( $waterside_address ) ); ?>" 
                 target="_blank"
                 rel="noopener noreferrer"
-              ><?php echo $waterside_address; ?></a>
+              >
+                <?php echo $waterside_address; ?>
+              </a>
             </div>
           <?php } ?>
+
+          <?php if ( $footer_cta ) { ?>
+            <a 
+              class="footer-cta"
+              href="<?php echo $footer_cta['url']; ?>"
+            >
+              <?php echo $footer_cta['title']; ?>
+            </a>
+          <?php } ?>
+
         </div>
 
         <div class="footer-inner-col footer-col-two">
           <h5 class="footer-col-title">Contact</h5>
           <?php if ( $waterside_phone ) { ?>
-            <div class="location-info">
+            <div class="contact-info">
               <span><?php echo $waterside_phone; ?></span>
             </div>
           <?php } ?>
           <?php if ( $waterside_email ) { ?>
-            <div class="location-info">
+            <div class="contact-info">
               <span><?php echo $waterside_email; ?></span>
             </div>
           <?php } ?>

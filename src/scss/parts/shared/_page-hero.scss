@@ -5,11 +5,18 @@
 
   .type-image,
   .type-video-external,
-  .type-video-internal {
+  .type-video-internal
+  {
     @extend %imageSize;
 
-    .hero-image {
+    .hero-image,
+    .hero-mask
+    {
       @extend %imageInner;
+    }
+    .hero-video
+    {
+      @extend %iframeVideoInner;
     }
   }
 
@@ -17,7 +24,9 @@
     position: absolute;
     // adds the header height value to the selected attribute ('top' in this case)
     @include useHeaderHeight(top);
-    right: $bodyPadding3;
+    right: $bodyPadding4;
     margin-top: $bodyPadding1;
+    text-align: right;
+    max-width: 974px;
   }
 }
