@@ -51,11 +51,27 @@ if ( have_rows( $modules ) ) :
       case 'title_text' :
 
         // options
-        $title        = get_sub_field( 'title' );
-        $title_color  = get_sub_field( 'title_color' );
-        $text         = get_sub_field( 'text' );
+        $column_arrangement = get_sub_field( 'column_arrangement' );
+        $background_color   = get_sub_field( 'background_color' );
+        $title              = get_sub_field( 'title' );
+        $title_color        = get_sub_field( 'title_color' );
+        $text               = get_sub_field( 'text' );
+        $column_one_text    = get_sub_field( 'column_one_text' );
+        $column_two_text    = get_sub_field( 'column_two_text' );
 
         include locate_template( $modules_path . 'title-text.php' );
+
+        break;
+
+      case 'single_media' :
+
+        // options
+        $media          = get_sub_field( 'media' );
+        $image          = get_sub_field( 'image' );
+        $video_external = get_sub_field( 'video_external' );
+        $video_internal = get_sub_field( 'video_internal' );
+
+        include locate_template( $modules_path . 'single-media.php' );
 
         break;
 

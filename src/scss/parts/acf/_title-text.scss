@@ -1,7 +1,16 @@
 .title-text-container {
   position: relative;
   width: 100%;
-  background: $darkGrey;
+
+  &.light-grey {
+    background: $lightGrey;
+  }
+  &.medium-grey {
+    background: $mediumGrey;
+  }
+  &.dark-grey {
+    background: $darkGrey;
+  }
 
   .row-container {
     width: 100%;
@@ -17,7 +26,7 @@
 
       h3 {
         max-width: 800px;
-        margin: 0 auto;
+        margin: 0 auto 1vw;
 
         &.title-color-white {
           color: $white;
@@ -32,6 +41,19 @@
         margin-left: auto;
         margin-right: auto;
         max-width: 575px;
+      }
+
+      .two-cols-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        margin-left: auto;
+        margin-right: auto;
+
+        .text-wrapper {
+          padding: 0 2vw;
+        }
       }
     }
   }

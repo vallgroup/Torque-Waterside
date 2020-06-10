@@ -1,32 +1,44 @@
 .page-hero {
   position: relative;
 
-  @include useHeaderHeight(margin-top, true);
-
-  .type-image,
-  .type-video-external,
-  .type-video-internal
-  {
-    @extend %imageSize;
-
+  // image
+  .type-image {
+    @extend %backgroundVideoSize; // intentional, for a larger hero media to cover area
     .hero-image,
-    .hero-mask
-    {
+    .hero-mask {
       @extend %imageInner;
     }
-    .hero-video
-    {
-      @extend %iframeVideoInner;
+  }
+  // video
+  .type-video-external,
+  .type-video-internal {
+    @extend %backgroundVideoSize;
+    .hero-video {
+      @extend %backgroundVideoInner;
     }
   }
 
-  .hero-title {
-    position: absolute;
-    // adds the header height value to the selected attribute ('top' in this case)
-    @include useHeaderHeight(top);
-    right: $bodyPadding4;
-    margin-top: $bodyPadding1;
-    text-align: right;
-    max-width: 974px;
+  &:not(.no-media) {
+    @include useHeaderHeight(margin-top, true);
+
+    .hero-title {
+      position: absolute;
+      // adds the header height value to the selected attribute ('top' in this case)
+      @include useHeaderHeight(top);
+      right: $bodyPadding4;
+      margin-top: $bodyPadding1;
+      text-align: right;
+      max-width: 974px;
+    }
+  }
+  &.no-media {
+    .hero-title {
+      position: relative;
+      margin-left: auto;
+      margin-right: $bodyPadding4;
+      margin-top: $bodyPadding1;
+      text-align: right;
+      max-width: 974px;
+    }
   }
 }

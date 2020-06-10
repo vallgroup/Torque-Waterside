@@ -1,0 +1,34 @@
+.single-media-container {
+  position: relative;
+  width: 100%;
+  background: $darkGrey;
+
+  .row-container {
+    width: 100%;
+    max-width: 974px;
+    margin: 0 auto;
+    text-align: center;
+      
+    box-sizing: border-box;
+    padding: $bodyPadding3 $bodyPadding3;
+    
+    .content-container {
+
+      // image
+      &.type-image {
+        @extend %imageSize;
+        .media-image {
+          @extend %imageInner;
+        }
+      }
+      // video
+      &.type-video-external,
+      &.type-video-internal {
+        @extend %imageSize;
+        .media-video {
+          @extend %imageInner;
+        }
+      }
+    }
+  }
+}

@@ -6,7 +6,11 @@
  * @package Torque
  */
 
-// get data 
+// get data
+$enable_hero = get_field( 'enable_hero' );
+$container_class = $enable_hero
+  ? ''
+  : 'no-media';
 $media = get_field( 'media' );
 // media urls/ids
 $image = get_field( 'image' );
@@ -86,19 +90,21 @@ if ( $hero_mask && '1' === $autoplay_video ) {
 }
 ?>
 
-<div class="page-hero">
-  <div class="type-<?php echo $media; ?>">
-    <?php if ( 'image' === $media ) { ?>
-      <div class="hero-image" style="background-image: url(<?php echo $image; ?>);" >
+<div class="page-hero <?php echo $container_class; ?>">
+  <?php if ( $enable_hero ) { ?>
+    <div class="type-<?php echo $media; ?>">
+      <?php if ( 'image' === $media ) { ?>
+        <div class="hero-image" style="background-image: url(<?php echo $image; ?>);" >
+          <?php echo $_hero_mask; ?>
+        </div>
+      <?php } elseif ( 'video-external' === $media ) { ?>
+        <?php echo $_video_html; ?>
         <?php echo $_hero_mask; ?>
-      </div>
-    <?php } elseif ( 'video-external' === $media ) { ?>
-      <?php echo $_video_html; ?>
-      <?php echo $_hero_mask; ?>
-    <?php } elseif ( 'video-internal' === $media ) { ?>
-      <?php echo $_video_html; ?>
-      <?php echo $_hero_mask; ?>
-    <?php } ?>
-  </div>
+      <?php } elseif ( 'video-internal' === $media ) { ?>
+        <?php echo $_video_html; ?>
+        <?php echo $_hero_mask; ?>
+      <?php } ?>
+    </div>
+  <?php } ?>
   <h1 class="hero-title"><?php echo $title; ?></h1>
 </div>

@@ -1,5 +1,6 @@
 header#header-style-1 {
   z-index: 998;
+  height: auto;
 
   .torque-header-content-wrapper {
     @include useHeaderHeight(height, false);

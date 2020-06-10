@@ -1,0 +1,28 @@
+.floorplans-container {
+  position: relative;
+  width: 100%;
+
+  &.light-grey {
+    background: $lightGrey;
+  }
+  &.medium-grey {
+    background: $mediumGrey;
+  }
+  &.dark-grey {
+    background: $darkGrey;
+  }
+
+  .row-container {
+    width: 100%;
+    
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      box-sizing: border-box;
+      padding: $bodyPadding3 $bodyPadding3;
+      text-align: center;
+    }
+  }
+}
