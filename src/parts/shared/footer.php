@@ -16,6 +16,9 @@ $waterside_email = get_field( 'email', 'option' )
 $footer_alt_logo = get_field( 'alternate_logo', 'option' )
   ? strip_tags( get_field( 'alternate_logo', 'option' ) ) 
   : null;
+$footer_alt_logo_link = get_field( 'alternate_logo_link', 'option' )
+  ? strip_tags( get_field( 'alternate_logo_link', 'option' ) ) 
+  : null;
 $footer_cta = get_field( 'footer_cta', 'option' );
 
 ?>
@@ -82,10 +85,16 @@ $footer_cta = get_field( 'footer_cta', 'option' );
 
     <?php if ( $footer_alt_logo ) { ?>
       <div class="footer-block-two">
-        <img
-          src=<?php echo $footer_alt_logo; ?>
-          alt="Logo"
-        />
+        <?php if ( $footer_alt_logo_link ) { ?>
+          <a href="<?php echo $footer_alt_logo_link; ?>">
+        <?php } ?>
+          <img
+            src=<?php echo $footer_alt_logo; ?>
+            alt="Logo"
+          />
+        <?php if ( $footer_alt_logo_link ) { ?>
+          </a>
+        <?php } ?>
       </div>
     <?php } ?>
 
