@@ -5,7 +5,14 @@ footer {
   .footer-container {
     width: 100%;
     box-sizing: border-box;
-    padding: $bodyPadding2 $bodyPadding3;
+    padding: $bodyPadding4 $bodyPadding3;
+
+    @include respond-to(tablet) {
+      padding: $bodyPadding3 $bodyPadding3;
+    }
+    @include respond-to(desktop) {
+      padding: $bodyPadding2 $bodyPadding3;
+    }
 
     @include respond-to(desktop) {
       display: flex;
