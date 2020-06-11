@@ -4,7 +4,7 @@
  */
 ?>
 
-<div class="map-container <?php echo $background_color ?>">
+<div class="map-container <?php //echo $background_color ?>">
   
 <div class="row-container">
 
