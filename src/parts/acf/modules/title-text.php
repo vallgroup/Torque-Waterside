@@ -33,6 +33,9 @@
             </div>
           <?php } ?>
         </div>
+        <?php if ( $column_two_text ) { ?>
+          <a class="col-two-read-more">View More</a>
+        <?php } ?>
       <?php } ?>
         
 

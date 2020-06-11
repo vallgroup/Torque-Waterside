@@ -75,6 +75,30 @@ if ( have_rows( $modules ) ) :
 
         break;
 
+      case 'floorplans' :
+
+        // options
+        // $media          = get_sub_field( 'media' );
+        // $image          = get_sub_field( 'image' );
+        // $video_external = get_sub_field( 'video_external' );
+        // $video_internal = get_sub_field( 'video_internal' );
+
+        include locate_template( $modules_path . 'floorplans.php' );
+
+        break;
+
+      case 'map' :
+
+        // options
+        // $media          = get_sub_field( 'media' );
+        // $image          = get_sub_field( 'image' );
+        // $video_external = get_sub_field( 'video_external' );
+        // $video_internal = get_sub_field( 'video_internal' );
+
+        include locate_template( $modules_path . 'map.php' );
+
+        break;
+
     }
 
   endwhile;

@@ -45,14 +45,43 @@
 
       .two-cols-container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         margin-left: auto;
         margin-right: auto;
 
+        @include respond-to(desktop) {
+          flex-direction: row;
+        }
+
         .text-wrapper {
           padding: 0 2vw;
+
+          &.col-two {
+            height: 0;
+            overflow: hidden;
+            transition: 0.25s;
+  
+            &.show {
+              height: auto;
+              overflow: visible;
+            }
+  
+            @include respond-to(desktop) {
+              height: auto;
+              overflow: visible;
+            }
+          }
+        }
+      }
+
+      .col-two-read-more {
+        @extend %useContentCTA;
+        margin: 3vw auto 2vw;
+        
+        @include respond-to(desktop) {
+          display: none;
         }
       }
     }

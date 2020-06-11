@@ -1,7 +1,10 @@
 .social-icons {
   .social-icon {
     display: inline-block;
-    margin-right: 1.4em;
+
+    &:not(:last-of-type) {
+      margin-right: 1.4em;
+    }
 
     img {
       width: 35px;

@@ -37,8 +37,13 @@ if ( class_exists( 'Waterside_Customizer' ) ) {
    new Waterside_ACF();
  }
 
-
-
+ /**
+  * Filtered Loop plugin settings
+  */
+ 
+ if ( class_exists( 'Torque_Filtered_Loop' ) && class_exists( 'Torque_Filtered_Loop_Shortcode' ) ) {
+   add_filter( Torque_Filtered_Loop_Shortcode::$LOOP_TEMPLATE_FILTER_HANDLE, function() { return "3"; } );
+ }
 
 /**
  * Admin settings
@@ -62,6 +67,14 @@ if ( class_exists( 'Waterside_Customizer' ) ) {
  add_action( 'admin_menu', 'torque_remove_menus' );
 
 
+// /**
+//  * Remove the additional CSS section, introduced in 4.7, from the Customizer.
+//  * @param $wp_customize WP_Customize_Manager
+//  */
+// function torque_remove_css_section( $wp_customize ) {
+// 	$wp_customize->remove_section( 'custom_css' );
+// }
+// add_action( 'customize_register', 'torque_remove_css_section', 15 );
 
 
 /**

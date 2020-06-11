@@ -83,13 +83,25 @@
     content: '';
     position: absolute;
     left: 50%;
-    top: 35px;
     transform: translateX(-50%);
-    width: 105px;
-    height: 28px;
     background-image: url("../statics/images/blue-line.png");
     background-repeat: no-repeat;
     background-size: contain;
+    
+    top: 26px;
+    width: 88px;
+    height: 28px;
+
+    @include respond-to(tablet) {
+      top: 35px;
+      width: 105px;
+      height: 28px;
+    }
+    @include respond-to(desktop) {
+      top: 35px;
+      width: 105px;
+      height: 28px;
+    }
   }
 }
 

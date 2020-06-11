@@ -22,8 +22,12 @@ footer {
       }
 
       .footer-logo-container {
-        margin-bottom: 34px;
+        margin: 0 auto 34px;
         max-width: 376px;
+
+        @include respond-to(desktop) {
+          margin: 0 auto 34px 0;
+        }
         
         a {
           display: block;

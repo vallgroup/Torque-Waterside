@@ -20,9 +20,171 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
+      flex-wrap: wrap;
+
       box-sizing: border-box;
-      padding: $bodyPadding3 $bodyPadding3;
+      padding: $bodyPadding3 0;
+
       text-align: center;
+      
+      margin: 0 auto;
+      max-width: 340px;
+  
+      @include respond-to(tablet) {
+        max-width: 632px;
+      }
+      @include respond-to(desktop) {
+        max-width: 1176px;
+      }
+
+      .torque-filtered-loop-react-entry {
+        width: 100%;
+        clear: right;
+        margin-left: 12.5px;
+        margin-right: 12.5px;
+
+        .torque-filtered-loop-filters {
+          margin-bottom: 30px;
+  
+          @include respond-to(tablet) {
+            margin-bottom: 53px;
+          }
+          @include respond-to(desktop) {
+            margin-bottom: 50px;
+          }
+
+          .torque-filtered-loop-filter-button {
+            @extend %useButton;
+
+            padding: 10px 0;
+            font-size: 12px;
+            width: 50%;
+  
+            @include respond-to(tablet) {
+              font-size: 16px;
+              width: 25%;
+            }
+            @include respond-to(desktop) {
+              font-size: 22px;
+              width: 25%;
+            }
+  
+            &:first-of-type {
+              width: 100%;
+              max-width: unset; 
+              display: none !important;
+            }
+            &.active {
+              @extend %useButtonAlt;
+              padding: 10px 0;
+            }
+            // &:first-of-type {
+            //   margin: 0 0 0 12.5px;
+            // }
+            // &:last-of-type {
+            //   margin: 0 12.5px 0 0;
+            // }
+          }
+        }
+
+        .posts-wrapper {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: flex-start;
+          box-sizing: border-box;
+          flex-wrap: wrap;
+          padding: $bodyPadding1 0 0;
+          text-align: center;
+        
+          @include respond-to(tablet) {
+            // left-align last row on tablet and desktop
+            &:after {
+              content: "";
+              flex: auto;
+            }
+          }
+
+          .loop-post {
+            border: 2px solid $white;
+            max-width: 375px;
+            box-sizing: border-box;
+
+            width: 100%;
+            max-width: 243px;
+            margin: 0 12.5px 45px;
+        
+            @include respond-to(tablet) {
+              max-width: calc(50% - 25px);
+            }
+            @include respond-to(desktop) {
+              max-width: calc(33.33% - 25px);
+            }
+
+            .content-wrapper {
+              h4 {
+                background-color: $white;
+                color: $mediumGrey;
+                font-size: 22px;
+                line-height: 30px;
+                text-transform: uppercase;
+                font-weight: normal;
+                margin: 0;
+                padding: 10px 5px;
+              }
+              
+              .featured-image-wrapper {
+                @extend %imageSize;
+                
+                .featured-image {
+                  @extend %imageInner;
+                }
+              }
+
+              .meta-wrapper {
+                padding: 13px 5px;
+              }
+
+              .download-wrapper {
+                @extend %useButton;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 10px 5px;
+                border-bottom: 0;
+                border-left: 0;
+                border-right: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .download-all-fps-wrapper {
+        width: 100%;
+        text-align: center;
+
+        @include respond-to(desktop) {
+          text-align: left;
+          margin: 0 auto 0 25px;
+        }
+
+        a {
+          @extend %useButton;
+          box-sizing: border-box;
+          padding: 10px 5px;
+
+          width: 100%;
+          max-width: 243px;
+          margin: 0 auto;
+      
+          @include respond-to(tablet) {
+            max-width: 300px;
+          }
+          @include respond-to(desktop) {
+            max-width: calc(33.33% - 25px);
+          }
+        }
+      }
     }
   }
 }
