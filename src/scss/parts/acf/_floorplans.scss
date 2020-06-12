@@ -57,7 +57,6 @@
             @extend %useButton;
 
             padding: 10px 0;
-            font-size: 12px;
             width: 50%;
 
             &.active {
@@ -70,16 +69,14 @@
             }
   
             @include respond-to(tablet) {
-              font-size: 16px;
               width: 25%;
             }
             @include respond-to(desktop) {
-              font-size: 22px;
               width: unset;
-              padding: 10px 10px;
+              padding: 12.5px 10px;
 
               &.active {
-                padding: 10px 10px;
+                padding: 12.5px 10px;
               }
               &:first-of-type {
                 width: unset;

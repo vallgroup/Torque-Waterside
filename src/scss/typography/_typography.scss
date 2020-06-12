@@ -5,14 +5,28 @@ body {
   background-color: $mediumGrey;
   color: $white;
   font-family: $fontFamilyBody;
-  font-size: $fontBodyMobile; // 14px
+  font-size: $fontSizeBodyMobile; // 14px
   line-height: 1.67;
 
   @include respond-to(tablet) {
-    font-size: $fontBodyTablet; // 16px
+    font-size: $fontSizeBodyTablet; // 16px
   }
   @include respond-to(desktop) {
-    font-size: $fontBodyDesktop; // 16px
+    font-size: $fontSizeBodyDesktop; // 16px
+  }
+}
+
+input,
+textarea {
+  color: $white;
+  font-family: $fontFamilyBody;
+  font-size: $fontSizeBodyMobile; // 14px
+
+  @include respond-to(tablet) {
+    font-size: $fontSizeBodyTablet; // 16px
+  }
+  @include respond-to(desktop) {
+    font-size: $fontSizeBodyDesktop; // 16px
   }
 }
 

@@ -114,12 +114,25 @@
   border: 2px solid;
   display: inline-block;
   position: relative;
-  padding: 11px 16px;
   transition: 0.2s;
+
   // regular atts
   background-color: transparent;
   color: $white;
   border-color: $white;
+
+  // mobile atts
+  padding: 3.5px 20px;
+  font-size: 13px;
+
+  @include respond-to(tablet) {
+    font-size: 16px;
+    padding: 8.5px 20px;
+  }
+  @include respond-to(desktop) {
+    font-size: 20px;
+    padding: 12.5px 40px;
+  }
 }
 // alt btn
 %useButtonAlt {

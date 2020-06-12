@@ -1,0 +1,153 @@
+.contact-container {
+  position: relative;
+  width: 100%;
+
+  .row-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: $bodyPadding3;
+    box-sizing: border-box;
+
+    @include respond-to(tablet) {
+      flex-direction: row;
+    }
+
+    @include respond-to(desktop) {
+      padding: $bodyPadding3 $bodyPadding5;
+    }
+
+
+    .content-container {
+
+      @include respond-to(tablet) {
+        flex: 0 0 43%;
+        margin-top: 2vw;
+        margin-right: 2%;
+      }
+      @include respond-to(desktop) {
+        flex: 0 0 48%;
+        margin-right: 2%;
+      }
+
+      .content {
+        margin-bottom: $bodyPadding3;
+      }
+      
+      .location-info,
+      .contact-info {
+        margin-bottom: 18px;
+      }
+    }
+
+    .form-container {
+
+      @include respond-to(tablet) {
+        flex: 0 0 55%;
+      }
+      @include respond-to(desktop) {
+        flex: 0 0 50%;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .grunion-field-wrap {
+          position: relative;
+          padding-bottom: 8px;
+
+          &.grunion-field-textarea-wrap {
+            margin-top: 15px;
+            padding-bottom: 0;
+          }
+
+          label {
+            position: absolute;
+            bottom: 0;
+            font-weight: normal;
+            color: $tealBlue;
+          }
+        }
+
+        // general input
+        input:not([type="checkbox"]):not([type="radio"]),
+        select,
+        optgroup,
+        textarea {
+          border-radius: 0;
+          background-color: $transparent;
+          padding: 12px;
+          width: 100% !important;
+          box-sizing: border-box;
+          // remove default
+          background-image: none !important;
+          outline: none !important;
+          appearance: none !important;
+        }
+
+        // inputs
+        input:not([type="checkbox"]):not([type="radio"]),
+        select,
+        optgroup {
+          border: 0;
+          border-bottom: solid 2px $white;
+
+          &:focus,
+          &:active {
+            border-bottom: solid 2px $tealBlue;
+          }
+        }
+
+        // textareas
+        textarea {
+          border: 2px solid $white;
+
+          &:focus,
+          &:active {
+            background-image: none !important;
+            border: 2px solid $tealBlue;
+          }
+        }
+
+        .grunion-field-wrap,
+        .contact-submit {
+          flex: 1 1 100%;
+  
+          @include respond-to(tablet) {
+            &.form-field-width-25-wrap {
+              flex: 0 0 24%;
+            }
+            &.form-field-width-50-wrap {
+              flex: 0 0 49%;
+            }
+            &.form-field-width-75-wrap {
+              flex: 0 0 75%;
+            }
+          }
+        }
+
+        .contact-submit {
+          button {
+            @extend %useButtonAlt;
+          }
+        }
+
+        .hidden-input-field-wrap {
+          display: none;
+        }
+      }
+
+      &.hide-labels form.contact-form {
+        label:not(.checkbox):not(.checkbox-multiple):not(.radio)
+        {
+          display: none;
+        }
+      }
+    }
+  }
+}

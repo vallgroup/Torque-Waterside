@@ -16,6 +16,7 @@
 @import 'parts/shared/header-templates/header-style-1';
 @import 'parts/shared/page-hero';
 @import 'parts/shared/footer';
+@import 'parts/shared/404';
 
 // acf
 @import 'parts/acf/content-spacer';
@@ -26,3 +27,4 @@
 @import 'parts/acf/floorplans';
 @import 'parts/acf/map';
 @import 'parts/acf/gallery';
+@import 'parts/acf/contact';

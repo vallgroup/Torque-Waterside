@@ -99,6 +99,24 @@ if ( have_rows( $modules ) ) :
 
         break;
 
+      case 'contact_form' :
+
+        // options
+        $content = strip_tags( get_sub_field( 'content'), $allowable_content_tags );
+        $waterside_address = get_field( 'address', 'option' )
+          ? strip_tags( get_field( 'address', 'option' ), '<br>, <p>' ) 
+          : null;
+        $waterside_phone = get_field( 'phone', 'option' )
+          ? strip_tags( get_field( 'phone', 'option' ) ) 
+          : null;
+        $waterside_email = get_field( 'email', 'option' )
+          ? strip_tags( get_field( 'email', 'option' ) ) 
+          : null;
+
+        include locate_template( $modules_path . 'contact.php' );
+
+        break;
+
     }
 
   endwhile;

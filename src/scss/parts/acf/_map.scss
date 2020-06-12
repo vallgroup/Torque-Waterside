@@ -53,17 +53,12 @@
           .torque-map-poi {
             button {
               @extend %useButton;
-              font-size: 13px;
               margin: 0 3.5px 7px;
-              padding: 3.5px 20px;
 
               @include respond-to(tablet) {
-                font-size: 16px;
                 margin: 0 5.5px 11px;
-                padding: 8.5px 20px;
               }
               @include respond-to(desktop) {
-                font-size: 20px;
                 margin: 0 12.5px 25px;
                 padding: 19.5px 40px;
               }
@@ -72,14 +67,16 @@
             &.active {
               button {
                 @extend %useButtonAlt;
-                padding: 3.5px 20px;
                 background-color: $greyishTeal;
                 border-color: $greyishTeal;
-
+                
+                margin: 0 3.5px 7px;
+  
                 @include respond-to(tablet) {
-                  padding: 8.5px 20px;
+                  margin: 0 5.5px 11px;
                 }
                 @include respond-to(desktop) {
+                  margin: 0 12.5px 25px;
                   padding: 19.5px 40px;
                 }
               }

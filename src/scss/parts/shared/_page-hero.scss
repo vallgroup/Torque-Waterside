@@ -28,7 +28,14 @@
       right: $bodyPadding4;
       margin-top: $bodyPadding1;
       text-align: right;
-      max-width: 974px;
+      max-width: 337px;
+
+      @include respond-to(tablet) {
+        max-width: 511px;
+      }
+      @include respond-to(desktop) {
+        max-width: 974px;
+      }
     }
   }
   &.no-media {

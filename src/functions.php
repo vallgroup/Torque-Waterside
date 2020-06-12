@@ -4,6 +4,8 @@ require_once( get_stylesheet_directory() . '/includes/waterside-child-nav-menus-
 require_once( get_stylesheet_directory() . '/includes/widgets/waterside-child-widgets-class.php');
 require_once( get_stylesheet_directory() . '/includes/customizer/waterside-child-customizer-class.php');
 require_once( get_stylesheet_directory() . '/includes/acf/waterside-child-acf-class.php');
+require_once( get_stylesheet_directory() . '/includes/torque-jetpack-form/torque-jetpack-form-class.php' );
+require_once( get_stylesheet_directory() . '/includes/torque-jetpack-form/torque-jetpack-form-fields-class.php' );
 
 /**
  * Child Theme Nav Menus
@@ -73,8 +75,9 @@ if ( class_exists( 'Waterside_Customizer' ) ) {
   * Jetpack filters, for local/staging use
   */
   if ( class_exists( 'Torque_Jetpack_Form' ) ) {
-    // Hook into Jetpack's form redirect filter when WP loads, without instantiating the entire class
+    // Hook into Jetpackfilters when WP loads, without instantiating the entire class
     Torque_Jetpack_Form::register_redirect_filter();
+    Torque_Jetpack_Form::register_req_label_filter();
     // add_filter( 'jetpack_development_mode', '__return_true' );
     add_filter( 'jetpack_is_staging_site', '__return_true' );
  }
