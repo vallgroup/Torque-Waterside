@@ -4,9 +4,9 @@
  */
 ?>
 
-<div class="image-title-text-cta-container">
+<section class="image-title-text-cta-container">
   
-<div class="row-container
+  <div class="row-container
     <?php echo $alignment; ?>
   ">
 
@@ -42,4 +42,4 @@
 
   </div>
 
-</div>
+</section>

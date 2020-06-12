@@ -38,7 +38,7 @@ if ( 'video-external' === $media ) {
 }
 ?>
 
-<div class="single-media-container">
+<section class="single-media-container">
   <div class="row-container">
     <div class="content-container type-<?php echo $media; ?>">
       <?php if ( 'image' === $media ) { ?>
@@ -48,4 +48,4 @@ if ( 'video-external' === $media ) {
       <?php } ?>
     </div>
   </div>
-</div>
+</section>

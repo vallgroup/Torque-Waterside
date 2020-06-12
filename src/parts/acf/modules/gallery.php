@@ -105,7 +105,7 @@ if ( $gallery_images ) :
   $total_images_rendered = 0;
 
   // close container
-  ?><div class="gallery-container"><?php
+  ?><section class="gallery-container"><?php
 
   // Loop through each post, and display in corresponding grid item (based on rows and items defined above)
   foreach( $gallery_images as $image ) {
@@ -176,7 +176,7 @@ if ( $gallery_images ) :
   }
   
   // close container
-  ?></div><?php
+  ?></section><?php
 
   /* Restore original Post Data */
   wp_reset_postdata();

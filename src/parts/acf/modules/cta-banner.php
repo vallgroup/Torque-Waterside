@@ -4,9 +4,9 @@
  */
 ?>
 
-<div class="cta-banner-container">
+<section class="cta-banner-container">
   
-<div class="row-container
+  <div class="row-container
     <?php echo $alignment; ?>
   ">
 
@@ -26,4 +26,4 @@
 
   </div>
 
-</div>
+</section>

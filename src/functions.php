@@ -45,6 +45,40 @@ if ( class_exists( 'Waterside_Customizer' ) ) {
    add_filter( Torque_Filtered_Loop_Shortcode::$LOOP_TEMPLATE_FILTER_HANDLE, function() { return "3"; } );
  }
 
+ /**
+  * Map Settings
+  */
+ if ( class_exists( 'Torque_Map_Controller' ) ) {
+    add_filter( Torque_Map_Controller::$DISPLAY_POIS_FILTER , function() { return false; });
+    add_filter( Torque_Map_Controller::$API_KEY_FILTER , function() { 
+      return get_field( 'google_maps_api_key', 'option' );
+    });
+    add_filter( Torque_Map_Controller::$POIS_LOCATION, function( $n ) {
+    return 'top';
+  } );
+  add_filter( Torque_Map_Controller::$DISPLAY_POIS_FILTER, function( $n ) {
+    return true;
+  } );
+ }
+ if ( class_exists( 'Torque_Map_CPT' ) ) {
+    add_filter( Torque_Map_CPT::$POIS_ALLOWED_FILTER, function( $n ) {
+      return 5;
+    } );
+    // add_filter( Torque_Map_CPT::$POIS_MANUAL_FILTER, function( $n ) {
+    //   return true;
+    // } );
+ }
+
+ /**
+  * Jetpack filters, for local/staging use
+  */
+  if ( class_exists( 'Torque_Jetpack_Form' ) ) {
+    // Hook into Jetpack's form redirect filter when WP loads, without instantiating the entire class
+    Torque_Jetpack_Form::register_redirect_filter();
+    // add_filter( 'jetpack_development_mode', '__return_true' );
+    add_filter( 'jetpack_is_staging_site', '__return_true' );
+ }
+
 /**
  * Admin settings
  */

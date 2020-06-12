@@ -84,7 +84,7 @@ if ( have_rows( $modules ) ) :
       case 'map' :
 
         // options
-        // ... map id?
+        $map_id = get_sub_field( 'map' );
 
         include locate_template( $modules_path . 'map.php' );
 

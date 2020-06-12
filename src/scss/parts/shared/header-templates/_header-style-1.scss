@@ -10,25 +10,56 @@ header#header-style-1 {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 40%;
+      width: 50%;
 
-      a, div, img {
+      @include respond-to(tablet) {
+        width: 40%;
+      }
+
+      a {
         width: 100%;
-        max-width: 376px;
+
+        div {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 100%;
+            max-width: 132px;
+
+            @include respond-to(tablet) {
+              max-width: 184px;
+            }
+            @include respond-to(desktop) {
+              max-width: 376px;
+            }
+          }
+        }
       }
     }
     
     .torque-header-burger-menu-wrapper {
-      width: 60%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 16px;
+      width: 50%;
+
+      @include respond-to(tablet) {
+        width: 60%;
+      }
 
       @include respond-to(desktop) {
         display: none;
       }
 
       .torque-burger-menu {
-        right: 16px;
-        top: 16px;
-        transform: translateY(-100%);
+        right: unset;
+        top: unset;
+        transform: unset;
+        position: relative;
         z-index: 1000;
 
         .torque-burger-menu-line {
@@ -67,9 +98,16 @@ header#header-style-1 {
     .torque-menu-items-stacked {
       width: auto;
       box-sizing: border-box;
-      padding: $bodyPadding3;
       background: $tealBlue;
       z-index: 98;
+      padding: $bodyPadding5 $bodyPadding3;
+
+      @include respond-to(tablet) {
+        padding: $bodyPadding4 $bodyPadding3;
+      }
+      @include respond-to(desktop) {
+        padding: $bodyPadding3;
+      }
 
       .torque-menu-item-wrapper  {
         text-align: right;

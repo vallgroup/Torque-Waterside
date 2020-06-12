@@ -7,9 +7,9 @@ $dl_all_fps = get_field( 'all_floorplans_file', 'option' );
 
 ?>
 
-<div class="floorplans-container <?php //echo $background_color; ?>">
+<section class="floorplans-container <?php //echo $background_color; ?>">
   
-<div class="row-container">
+  <div class="row-container">
 
     <div class="content-container">
 
@@ -38,4 +38,4 @@ $dl_all_fps = get_field( 'all_floorplans_file', 'option' );
 
   </div>
 
-</div>
+</section>

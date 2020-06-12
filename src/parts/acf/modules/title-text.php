@@ -4,7 +4,7 @@
  */
 ?>
 
-<div class="title-text-container <?php echo $background_color ?>">
+<section class="title-text-container <?php echo $background_color ?>">
   
 <div class="row-container">
 
@@ -43,4 +43,4 @@
 
   </div>
 
-</div>
+</section>
