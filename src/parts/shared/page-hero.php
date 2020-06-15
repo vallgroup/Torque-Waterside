@@ -90,7 +90,7 @@ if ( $hero_mask && '1' === $autoplay_video ) {
 }
 ?>
 
-<div class="page-hero <?php echo $container_class; ?>">
+<div class="page-hero <?php echo $container_class; ?> type-<?php echo $media; ?>">
   <?php if ( $enable_hero ) { ?>
     <div class="type-<?php echo $media; ?>">
       <?php if ( 'image' === $media ) { ?>

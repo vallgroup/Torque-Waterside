@@ -23,7 +23,7 @@
       box-sizing: border-box;
       text-align: center;
 
-      padding: $bodyPadding3 0;
+      padding: $bodyPadding4 0 $bodyPadding3;
 
       @include respond-to(tablet) {
         padding: $bodyPadding3 $bodyPadding3;
@@ -106,7 +106,7 @@
         .torque-map-pois-list {
           display: flex;
           flex-direction: column;
-          padding: $bodyPadding2 $bodyPadding4;
+          padding: $bodyPadding4 $bodyPadding4 $bodyPadding2;
 
           @include respond-to(tablet) {
             display: block;

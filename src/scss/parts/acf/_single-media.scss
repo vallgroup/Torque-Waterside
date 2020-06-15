@@ -8,9 +8,12 @@
     max-width: 974px;
     margin: 0 auto;
     text-align: center;
-      
     box-sizing: border-box;
-    padding: $bodyPadding3 $bodyPadding3;
+    padding: 0;
+      
+    @include respond-to(tablet) {
+      padding: $bodyPadding3 $bodyPadding3;
+    }
     
     .content-container {
 

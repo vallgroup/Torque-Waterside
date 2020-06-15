@@ -1,5 +1,6 @@
 .page-hero {
   position: relative;
+  width: 100%;
 
   // image
   .type-image {
@@ -23,14 +24,16 @@
 
     .hero-title {
       position: absolute;
-      // adds the header height value to the selected attribute ('top' in this case)
-      @include useHeaderHeight(top);
+      top: $bodyPadding6;
       right: $bodyPadding4;
-      margin-top: $bodyPadding1;
+      margin-top: $bodyPadding2;
       text-align: right;
       max-width: 337px;
 
       @include respond-to(tablet) {
+        // adds the header height value to the selected attribute ('top' in this case)
+        @include useHeaderHeight(top);
+        margin-top: $bodyPadding1;
         max-width: 511px;
       }
       @include respond-to(desktop) {

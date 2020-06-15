@@ -69,18 +69,18 @@
       // set header height here, because we compress the height when fixed/scrolled
       const headerHeight = headerContainer.outerHeight();
       
-      if ($(this).scrollTop() >= headerHeight) {
+      if ($(this).scrollTop() >= 1) {
         // add body classes
         bodyContainer.addClass(bodyScrolledClass);
         bodyContainer.addClass(headerFixedClass);
         // add main padding
-        mainContainer.css('margin-top', headerHeight);
+        // mainContainer.css('margin-top', headerHeight);
       } else {
         // remove body classes
         bodyContainer.removeClass(bodyScrolledClass);
         bodyContainer.removeClass(headerFixedClass);
         // remove main padding
-        mainContainer.css('margin-top', 0);
+        // mainContainer.css('margin-top', 0);
       }
     }
   });

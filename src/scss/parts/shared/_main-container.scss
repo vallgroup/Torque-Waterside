@@ -1,0 +1,5 @@
+main {
+  @include useHeaderHeight(padding-top);
+  overflow: hidden;
+  width: 100vw;
+}
