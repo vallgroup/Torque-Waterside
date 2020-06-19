@@ -64,11 +64,17 @@
           &.grunion-field-textarea-wrap {
             margin-top: 15px;
             padding-bottom: 0;
+
+            label {
+              top: 6px;
+              bottom: unset;
+            }
           }
 
           label {
             position: absolute;
             bottom: 0;
+            left: 8px;
             font-weight: normal;
             color: $tealBlue;
           }
