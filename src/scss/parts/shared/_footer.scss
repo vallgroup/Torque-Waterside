@@ -65,6 +65,11 @@ footer {
             .footer-cta {
               @extend %useButton;
               margin-top: 1.5em;
+
+              @include respond-to(desktop) {
+                font-size: 16px;
+                padding: 10px 25px;
+              }
             }
           }
           &.footer-col-two {
