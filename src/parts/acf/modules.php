@@ -90,12 +90,12 @@ if ( have_rows( $modules ) ) :
 
         break;
 
-      case 'gallery' :
+      case 'gallery_grid' :
 
         // options
-        $gallery_images = get_sub_field( 'gallery_images' );
+        $num_rows = get_sub_field( 'grid_rows' );
 
-        include locate_template( $modules_path . 'gallery.php' );
+        include locate_template( $modules_path . 'gallery-grid.php' );
 
         break;
 

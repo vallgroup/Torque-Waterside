@@ -1,13 +1,11 @@
 /* autoprefixer grid: no-autoplace */
-
 .gallery-container {
+  position: relative;
   width: 100%;
   box-sizing: border-box;
-  padding: $bodyPadding3 $bodyPadding3;
+  padding: 0 $bodyPadding3;
 
   .gallery-module {
-    overflow: hidden;
-    
     .gallery-grid-root {
       .grid-image {
         position: relative;
@@ -16,104 +14,112 @@
         margin: 0vw 0;
         padding-top: 54.6%;
         overflow: hidden;
-
-        
-        @include respond-to-max(tablet) {
-          margin-bottom: 20px
-        }
-
+  
         @supports (display: grid) {
           width: 100%;
         }
-
+  
         .grid-image-container {
           position: absolute;
           top: 0;
           left: 0;
-
+          width: 100%;
+  
           display: block;
           width: 100%;
           height: 100%;
           object-fit: cover;
           object-position: center;
-
+  
           background-position: center center;
           background-repeat: no-repeat;
           background-size: cover;
         }
-
+  
         .caption-overlay {
           position: absolute;
           top: 0;
           right: 0;
           bottom: 0;
           left: 0;
-
+  
           display: flex;
           justify-content: center;
           align-items: center;
           padding: 30px;
-
-          background-color: $black15pc;
+  
+          background-color: $transparent;
           color: $white;
-
+  
           transition: all 0.3s ease;
           opacity: 0;
-
-          @include respond-to-max(desktop) {
-            position: absolute;
-            bottom: 0;
-            top: unset;
-
-            align-items: flex-end;
-            padding: 15px 30px;
-
-            background-color: $black15pc;
-
-            opacity: 1;
-          }
         }
-
-        /* one item */
-        &.grid-width-12:first-child:nth-last-child(1) {
-          margin-bottom: 0 !important;
-        }
-
+  
         &:hover {
           .caption-overlay {
             opacity: 1;
           }
         }
       }
-
-      /**
-       * Desktop
+  
+      /*
+        Tablet only (not inherited by desktop)
        */
+  
       @include respond-to(tablet) {
+        // padding must respond to tablet
+        .grid-image {
+          padding-top: 0;
+        }
+  
+        @include respond-to-max(desktop) {
+          margin: 0 -1vw;
+          display: flex;
+          flex-wrap: wrap;
+  
+          .grid-image {
+            margin: 1vw;
+            width: auto;
+            height: 400px;
+  
+            .grid-image-container {
+              position: relative;
+            }
+  
+            @for $i from 1 through 12 {
+              $width: ($i / 12) * 100 * 1%;
+  
+              &.grid-width-#{$i} {
+                flex: 1 0 $width;
+                width: $width;
+              }
+            }
+          }
+        }
+      }
+  
+      /*
+        Desktop
+       */
+      @include respond-to(desktop) {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-
+  
         @supports (display: grid) {
           grid-row-gap: 25px;
           grid-column-gap: 25px;
         }
-
+  
         @for $i from 1 through 2 {
           &.grid-rows-#{$i} {
-            grid-template-rows: repeat($i, 250px);
-            @include respond-to(desktop) {
-              grid-template-rows: repeat($i, 400px);
-            }
+            grid-template-rows: repeat($i, 400px);
           }
         }
-
+  
         .grid-image {
           
           margin-right: 25px;
-          
-          @include respond-to-max(tablet) {
-            // margin-bottom: 25px;
-          }
+          // margin-bottom: 25px;
           
           @for $i from 0 through 11 {
             // possible col start value
@@ -130,10 +136,10 @@
               }
             }
           }
-
+  
           @for $i from 0 through 1 {
             $start: $i + 1;
-
+  
             @for $height from 1 through 2 {
               &.grid-row-#{$i}-#{$height} {
                 grid-row-start: $start;
@@ -144,30 +150,26 @@
         }
       }
     }
-
-    // adjacent galleries should still have gap
-    & + .gallery-module {
-      // @include respond-to(tablet) {
-      //   margin-top: 1vw;
-      //   margin-bottom: 1vw;
-      // }
-
-      @include respond-to(tablet) {
-        margin-top: 25px;
-        margin-bottom: 25px;
-      }
+  }
+  
+  // adjacent galleries should still have gap
+  & + .gallery-container {
+    @include respond-to(tablet) {
+      margin-top: 1vw;
     }
 
-    // last row should have gap at bottom...
-    // &:last-of-type {
-    //   @include respond-to(tablet) {
-    //     margin-bottom: 1vw;
-    //   }
-
-    //   @include respond-to(desktop) {
-    //     margin-bottom: 25px;
-    //   }
-    // }
+    @include respond-to(desktop) {
+      margin-top: 25px;
+    }
   }
-
+  
+  // the first gallery should have top padding
+  &:first-of-type {
+    padding-top: $bodyPadding3;
+  }
+  
+  // the last gallery should have bottom padding
+  &:last-of-type {
+    padding-bottom: $bodyPadding3;
+  }
 }

@@ -65,7 +65,15 @@
                 "type": "text",
                 "instructions": "Override the page title by entering text into this field.",
                 "required": 0,
-                "conditional_logic": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5ede11a94cf15",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
                 "wrapper": {
                     "width": "50",
                     "class": "",
@@ -1235,17 +1243,17 @@
                         "min": "",
                         "max": ""
                     },
-                    "layout_5ee1b8a7c11f0": {
-                        "key": "layout_5ee1b8a7c11f0",
-                        "name": "gallery",
-                        "label": "Gallery",
+                    "layout_5c869eb43ec10": {
+                        "key": "layout_5c869eb43ec10",
+                        "name": "gallery_grid",
+                        "label": "Gallery Grid",
                         "display": "block",
                         "sub_fields": [
                             {
-                                "key": "field_5ee1b8abc11f1",
-                                "label": "Gallery Images",
-                                "name": "gallery_images",
-                                "type": "gallery",
+                                "key": "field_5c869ee83ec12",
+                                "label": "Grid Rows",
+                                "name": "grid_rows",
+                                "type": "range",
                                 "instructions": "",
                                 "required": 0,
                                 "conditional_logic": 0,
@@ -1254,17 +1262,137 @@
                                     "class": "",
                                     "id": ""
                                 },
-                                "min": "",
-                                "max": "",
-                                "insert": "append",
-                                "library": "all",
-                                "min_width": "",
-                                "min_height": "",
-                                "min_size": "",
-                                "max_width": "",
-                                "max_height": "",
-                                "max_size": "",
-                                "mime_types": ""
+                                "default_value": 1,
+                                "min": 1,
+                                "max": 2,
+                                "step": 1,
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_5c869fef3ec13",
+                                "label": "Images",
+                                "name": "images",
+                                "type": "repeater",
+                                "instructions": "Picture a grid with 12 columns and 2 rows. <\/br>The grid lines between the columns (including the first and last one) can be labelled from 0 to 13, and between the rows from 0 to 2. <\/br>For each image, you can define the area in this grid that it will live in (on desktop) by giving it a column line start\/finish and a row line start\/finish. <\/br><\/br> The order you add the images will have no effect on desktop (since we're just giving it a grid area), but will be relevant for mobile and tablet.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "collapsed": "field_5c869ffc3ec14",
+                                "min": 0,
+                                "max": 0,
+                                "layout": "table",
+                                "button_label": "Add Image",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_5c869ffc3ec14",
+                                        "label": "Image",
+                                        "name": "image",
+                                        "type": "image",
+                                        "instructions": "",
+                                        "required": 1,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "return_format": "array",
+                                        "preview_size": "thumbnail",
+                                        "library": "all",
+                                        "min_width": "",
+                                        "min_height": "",
+                                        "min_size": "",
+                                        "max_width": "",
+                                        "max_height": "",
+                                        "max_size": "",
+                                        "mime_types": ""
+                                    },
+                                    {
+                                        "key": "field_5c86a00f3ec15",
+                                        "label": "Column Start",
+                                        "name": "column_start",
+                                        "type": "range",
+                                        "instructions": "",
+                                        "required": 1,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "min": 0,
+                                        "max": 11,
+                                        "step": 1,
+                                        "prepend": "",
+                                        "append": ""
+                                    },
+                                    {
+                                        "key": "field_5c86a0573ec16",
+                                        "label": "Column End",
+                                        "name": "column_end",
+                                        "type": "range",
+                                        "instructions": "",
+                                        "required": 1,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "min": 1,
+                                        "max": 12,
+                                        "step": 1,
+                                        "prepend": "",
+                                        "append": ""
+                                    },
+                                    {
+                                        "key": "field_5c86a0693ec17",
+                                        "label": "Row Start",
+                                        "name": "row_start",
+                                        "type": "range",
+                                        "instructions": "",
+                                        "required": 1,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "min": 0,
+                                        "max": 1,
+                                        "step": 1,
+                                        "prepend": "",
+                                        "append": ""
+                                    },
+                                    {
+                                        "key": "field_5c86a07f3ec18",
+                                        "label": "Row End",
+                                        "name": "row_end",
+                                        "type": "range",
+                                        "instructions": "",
+                                        "required": 1,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "min": 1,
+                                        "max": 2,
+                                        "step": 1,
+                                        "prepend": "",
+                                        "append": ""
+                                    }
+                                ]
                             }
                         ],
                         "min": "",
