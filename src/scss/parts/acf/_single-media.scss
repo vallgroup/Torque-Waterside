@@ -12,7 +12,7 @@
     padding: 0;
       
     @include respond-to(tablet) {
-      padding: $bodyPadding3 $bodyPadding3;
+      padding: $bodyPadding3 0;
     }
     
     .content-container {

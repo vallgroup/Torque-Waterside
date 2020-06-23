@@ -85,6 +85,11 @@ header#header-style-1 {
         align-items: center;
         justify-content: space-evenly;
         height: 100%;
+        
+        .torque-menu-item {
+          text-transform: uppercase;
+          font-size: 0.89em;
+        }
       }
     }
   }

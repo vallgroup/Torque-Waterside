@@ -22,6 +22,17 @@
   &:not(.no-media) {
     @include useHeaderHeight(margin-top, true);
 
+    .hero-gradient {
+      height: 50%;
+      mix-blend-mode: multiply;
+      background-image: linear-gradient(to bottom, #000000, rgba(255, 255, 255, 0));
+      position: absolute;
+      z-index: 9;
+      width: 100%;
+      opacity: 0.51;
+      z-index: 1;
+    }
+
     .hero-title {
       position: absolute;
       top: $bodyPadding6;
@@ -29,6 +40,7 @@
       margin-top: $bodyPadding2;
       text-align: right;
       max-width: 337px;
+      z-index: 1;
 
       @include respond-to(tablet) {
         // adds the header height value to the selected attribute ('top' in this case)

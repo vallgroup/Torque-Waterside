@@ -150,4 +150,40 @@ function torque_enqueue_child_scripts() {
     );
 }
 
+
+
+function torque_customize_register( $wp_customize ) {
+
+  $wp_customize->add_setting( 'disable_custom_css', array(
+    'type' => 'theme_mod', // or 'option'
+    'capability' => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+    'default' => '',
+    'transport' => 'postMessage', // refresh or postMessage
+    'sanitize_callback' => '',
+    'sanitize_js_callback' => '', // Basically to_json.
+  ) );
+
+  $wp_customize->add_control( 'disable_custom_css', array(
+    'type' => 'checkbox',
+    'priority' => 1, // Within the section.
+    'section' => 'custom_css', // Required, core or custom.
+    'label' => __( 'Disable CSS' ),
+    'input_attrs' => array(
+      'class' => 'disable-customizer-css',
+    ),
+    // 'active_callback' => 'callback_single',
+  ) );
+
+  /* JS API
+  wp.customize( 'disable_custom_css', function( value ) {
+    value.bind( function( newval ) {
+        console.log( 'newval', newval );
+        disableCustomCss
+    } );
+  } );
+  */
+}
+add_action( 'customize_register', 'torque_customize_register' );
+
 ?>

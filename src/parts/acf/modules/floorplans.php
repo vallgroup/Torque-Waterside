@@ -24,11 +24,13 @@ $dl_all_fps = get_field( 'all_floorplans_file', 'option' );
         
           echo do_shortcode($shortcode); 
           
+          // show download all link, if set in options
           if ( $dl_all_fps ) { ?>
             <div class="download-all-fps-wrapper">
-              <a href="<?php echo $dl_all_fps['url']; ?>">Download All Floorplans</a>
+              <a href="<?php echo $dl_all_fps['url']; ?>" target="_blank">Download All Floorplans</a>
             </div>
           <?php }
+
         } else {
           echo 'Floorplan CPT not found, contact site admin.';
         }

@@ -73,7 +73,16 @@
   cursor: pointer;
   margin-top: 3vw;
   margin-bottom: 2vw;
+  padding-bottom: 10px;
   transition: 0.2s;
+
+  &:hover {
+    color: $lightGrey;
+
+    &:after {
+      filter: grayscale(100%);
+    }
+  }
 
   &:after {
     content: '';
@@ -83,6 +92,7 @@
     background-image: url("../statics/images/blue-line.png");
     background-repeat: no-repeat;
     background-size: contain;
+    transition: 0.2s;
     
     top: 26px;
     width: 88px;
@@ -136,4 +146,29 @@
   color: $white;
   border-color: $tealBlue;
   background-color: $tealBlue;
+}
+
+// regular hover
+%useButtonHover {
+  &:hover {
+    color: $white;
+    border-color: $tealBlue;
+    background-color: $tealBlue;
+  }
+}
+// regular hover
+%useButtonHoverAlt {
+  &:hover {
+    color: $lightGrey;
+    border-color: $white;
+    background-color: $white;
+  }
+}
+// regular hover
+%useButtonHoverAlt2 {
+  &:hover {
+    color: $white;
+    border-color: $greyishTeal;
+    background-color: $greyishTeal;
+  }
 }

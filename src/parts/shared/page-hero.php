@@ -92,6 +92,7 @@ if ( $hero_mask && '1' === $autoplay_video ) {
 
 <div class="page-hero <?php echo $container_class; ?> type-<?php echo $media; ?>">
   <?php if ( $enable_hero ) { ?>
+    <div class="hero-gradient"></div>
     <div class="type-<?php echo $media; ?>">
       <?php if ( 'image' === $media ) { ?>
         <div class="hero-image" style="background-image: url(<?php echo $image; ?>);" >
