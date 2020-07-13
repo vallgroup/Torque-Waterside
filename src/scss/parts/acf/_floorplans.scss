@@ -14,7 +14,7 @@
 
   .row-container {
     width: 100%;
-    
+
     .content-container {
       display: flex;
       flex-direction: column;
@@ -26,10 +26,10 @@
       padding: $bodyPadding3 0;
 
       text-align: center;
-      
+
       margin: 0 auto;
       max-width: 340px;
-  
+
       @include respond-to(tablet) {
         max-width: 632px;
       }
@@ -45,7 +45,7 @@
           margin-bottom: 30px;
           margin-left: 12.5px;
           margin-right: 12.5px;
-  
+
           @include respond-to(tablet) {
             margin-bottom: 53px;
           }
@@ -61,7 +61,7 @@
             padding: 10px 15px;
             width: 50%;
             max-width: 300px;
-            
+
             @include respond-to(tablet) {
               font-size: 16px;
             }
@@ -70,7 +70,7 @@
               @extend %useButtonAlt;
               font-size: 16px;
               padding: 10px 15px;
-  
+
               @include respond-to(tablet) {
                 font-size: 16px;
               }
@@ -79,7 +79,7 @@
               width: 100%;
               max-width: unset;
             }
-  
+
             @include respond-to(tablet) {
               width: 25%;
             }
@@ -99,7 +99,8 @@
           }
         }
 
-        .posts-wrapper {
+        .posts-wrapper,
+        .categories-wrapper {
           display: flex;
           flex-direction: row;
           justify-content: center;
@@ -108,7 +109,7 @@
           flex-wrap: wrap;
           padding: $bodyPadding1 0 0;
           text-align: center;
-        
+
           @include respond-to(tablet) {
             // left-align last row on tablet and desktop
             &:after {
@@ -116,6 +117,9 @@
               flex: auto;
             }
           }
+
+          margin-left: -100px;
+          margin-right: -100px;
 
           .loop-post {
             border: 2px solid $white;
@@ -125,12 +129,15 @@
             width: 100%;
             max-width: 243px;
             margin: 0 12.5px 45px;
-        
+
             @include respond-to(tablet) {
               max-width: calc(50% - 25px);
             }
             @include respond-to(desktop) {
-              max-width: calc(33.33% - 25px);
+              // max-width: calc(33.33% - 25px);
+              @if(&, '&.categories-wrapper') {
+                max-width: calc(25% - 25px);
+              }
             }
 
             .content-wrapper {
@@ -144,10 +151,10 @@
                 margin: 0;
                 padding: 10px 5px;
               }
-              
+
               .featured-image-wrapper {
                 @extend %imageSize;
-                
+
                 .featured-image {
                   @extend %imageInner;
                 }
@@ -197,7 +204,7 @@
           width: 100%;
           max-width: 243px;
           margin: 0 auto;
-      
+
           @include respond-to(tablet) {
             max-width: 300px;
             font-size: 1em;
