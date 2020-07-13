@@ -42,7 +42,7 @@ if ( class_exists( 'Waterside_Customizer' ) ) {
  /**
   * Filtered Loop plugin settings
   */
- 
+
  if ( class_exists( 'Torque_Filtered_Loop' ) && class_exists( 'Torque_Filtered_Loop_Shortcode' ) ) {
    add_filter( Torque_Filtered_Loop_Shortcode::$LOOP_TEMPLATE_FILTER_HANDLE, function() { return "3"; } );
  }
@@ -52,7 +52,7 @@ if ( class_exists( 'Waterside_Customizer' ) ) {
   */
  if ( class_exists( 'Torque_Map_Controller' ) ) {
     add_filter( Torque_Map_Controller::$DISPLAY_POIS_FILTER , function() { return false; });
-    add_filter( Torque_Map_Controller::$API_KEY_FILTER , function() { 
+    add_filter( Torque_Map_Controller::$API_KEY_FILTER , function() {
       return get_field( 'google_maps_api_key', 'option' );
     });
     add_filter( Torque_Map_Controller::$POIS_LOCATION, function( $n ) {
@@ -81,6 +81,20 @@ if ( class_exists( 'Waterside_Customizer' ) ) {
     // add_filter( 'jetpack_development_mode', '__return_true' );
     add_filter( 'jetpack_is_staging_site', '__return_true' );
  }
+
+ /**
+  * Floorplan Settings
+  */
+if ( class_exists( 'Torque_Floor_Plan_CPT' ) ) {
+  register_taxonomy(
+    'floor_plan_cat',
+    'floor_plan',
+    array(
+      'show_in_rest' => true,
+      'hierarchical' => true,
+    )
+  );
+}
 
 /**
  * Admin settings
