@@ -170,6 +170,10 @@ function waterside_head_output() { ?>
 				   src="https://www.facebook.com/tr?id=332649404637194&ev=PageView&noscript=1"
 				   /></noscript>
 	<!-- End Facebook Pixel Code -->
+
+	<!-- Mailchimp Code -->
+  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/5cb351ec3204e9c5b7d7b2fe9/847ccf68a5bfa9616740b0389.js");</script>
+	<!-- End Mailchimp Code -->
 <?php }
 
 
