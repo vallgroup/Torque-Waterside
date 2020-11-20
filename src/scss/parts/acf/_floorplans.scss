@@ -118,8 +118,10 @@
             }
           }
 
-          margin-left: -100px;
-          margin-right: -100px;
+          @include respond-to-custom(1330px) {
+            margin-left: -6vw;
+            margin-right: -6vw;
+          }
 
           .loop-post {
             border: 2px solid $white;

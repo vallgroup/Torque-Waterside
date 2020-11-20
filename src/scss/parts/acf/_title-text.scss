@@ -14,7 +14,7 @@
 
   .row-container {
     width: 100%;
-    
+
     .content-container {
       display: flex;
       flex-direction: column;
@@ -23,7 +23,7 @@
       text-align: center;
       box-sizing: border-box;
       padding: $bodyPadding4 $bodyPadding3;
-      
+
       @include respond-to(tablet) {
         padding: $bodyPadding3 $bodyPadding3;
       }
@@ -63,15 +63,15 @@
           padding: 0 2vw;
 
           &.col-two {
-            height: 0;
-            overflow: hidden;
-            transition: 0.25s;
-  
-            &.show {
+            // height: 0;
+            // overflow: hidden;
+            // transition: 0.25s;
+            //
+            // &.show {
               height: auto;
               overflow: visible;
-            }
-  
+            // }
+
             @include respond-to(desktop) {
               height: auto;
               overflow: visible;
@@ -81,12 +81,12 @@
       }
 
       .col-two-read-more {
-        @extend %useContentCTA;
-        margin: 3vw auto 2vw;
-        
-        @include respond-to(desktop) {
+        // @extend %useContentCTA;
+        // margin: 3vw auto 2vw;
+        //
+        // @include respond-to(desktop) {
           display: none;
-        }
+        // }
       }
     }
   }
