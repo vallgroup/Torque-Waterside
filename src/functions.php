@@ -165,6 +165,31 @@ function torque_enqueue_child_scripts() {
 }
 
 
+add_action( 'wp_head', 'waterside_head_output' );
+function waterside_head_output() { ?>
+	<!-- Facebook Pixel Code -->
+	<script>
+		!function(f,b,e,v,n,t,s)
+		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		 n.queue=[];t=b.createElement(e);t.async=!0;
+		 t.src=v;s=b.getElementsByTagName(e)[0];
+		 s.parentNode.insertBefore(t,s)}(window, document,'script',
+										 'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '332649404637194');
+		fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+				   src="https://www.facebook.com/tr?id=332649404637194&ev=PageView&noscript=1"
+				   /></noscript>
+	<!-- End Facebook Pixel Code -->
+
+	<!-- Mailchimp Code -->
+  <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/5cb351ec3204e9c5b7d7b2fe9/847ccf68a5bfa9616740b0389.js");</script>
+	<!-- End Mailchimp Code -->
+<?php }
+
 
 function torque_customize_register( $wp_customize ) {
 
