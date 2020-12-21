@@ -123,7 +123,8 @@
             margin-right: -6vw;
           }
 
-          .loop-post {
+          .loop-post,
+          .loop-cat {
             border: 2px solid $white;
             max-width: 375px;
             box-sizing: border-box;
@@ -185,6 +186,21 @@
               }
             }
           }
+
+          .loop-cat {
+            @include respond-to(tablet) {
+              max-width: calc(50% - 25px);
+            }
+            @include respond-to(desktop) {
+              max-width: calc(50% - 25px);
+            }
+          }
+        }
+
+        .categories-wrapper {
+          max-width: 1000px;
+          margin-left: auto;
+          margin-right: auto;
         }
       }
 
@@ -193,7 +209,6 @@
         text-align: center;
 
         @include respond-to(desktop) {
-          text-align: left;
           margin: 0 auto 0 12.5px;
         }
 
