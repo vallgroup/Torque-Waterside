@@ -125,6 +125,17 @@ if ( have_rows( $modules ) ) :
         include locate_template( $modules_path . 'wysiwyg.php' );
 
         break;
+
+      case 'floorplan_sitemap' :
+
+        $lakeshore = get_sub_field( 'lakeshore' );
+        $weatherly = get_sub_field( 'weatherly' );
+        $midway = get_sub_field( 'midway' );
+        $leeward = get_sub_field( 'leeward' );
+
+        include locate_template( $modules_path . 'floorplan-sitemap.php' );
+
+        break;
     }
 
   endwhile;
