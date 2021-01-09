@@ -83,18 +83,19 @@
               if (weatherly[ix] && weatherly[ix].floorplan) {
                 (window.spectra && window.spectra.logEvent &&
                   window.spectra.logEvent('sitemap_clicked', {
-                    floorplan: leeward[ix].floorplan
+                    floorplan: weatherly[ix].floorplan
                   })
                 );
                 window.open(weatherly[ix].floorplan);
               }
             })))
-
+console.log(midway, fpD);
             fpD.forEach((fp, ix) => (fp.addEventListener('click', function() {
+              console.log(midway[ix]);
               if (midway[ix] && midway[ix].floorplan) {
                 (window.spectra && window.spectra.logEvent &&
                   window.spectra.logEvent('sitemap_clicked', {
-                    floorplan: leeward[ix].floorplan
+                    floorplan: midway[ix].floorplan
                   })
                 );
                 window.open(midway[ix].floorplan);
