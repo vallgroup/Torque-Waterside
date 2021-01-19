@@ -1,11 +1,16 @@
 <?php
 
+require_once( get_stylesheet_directory() . '/api/torque-waterside-rest-controller-class.php');
 require_once( get_stylesheet_directory() . '/includes/waterside-child-nav-menus-class.php');
 require_once( get_stylesheet_directory() . '/includes/widgets/waterside-child-widgets-class.php');
 require_once( get_stylesheet_directory() . '/includes/customizer/waterside-child-customizer-class.php');
 require_once( get_stylesheet_directory() . '/includes/acf/waterside-child-acf-class.php');
 require_once( get_stylesheet_directory() . '/includes/torque-jetpack-form/torque-jetpack-form-class.php' );
 require_once( get_stylesheet_directory() . '/includes/torque-jetpack-form/torque-jetpack-form-fields-class.php' );
+
+if ( class_exists( 'Torque_Waterside_REST_Controller' ) ) {
+  new Torque_Waterside_REST_Controller();
+}
 
 /**
  * Child Theme Nav Menus
@@ -241,5 +246,45 @@ function torque_customize_register( $wp_customize ) {
   */
 }
 add_action( 'customize_register', 'torque_customize_register' );
+
+/**
+ * output dialog modal on the footer
+ */
+function waterside_footer_output() {
+  ?>
+  <div id="waterside-modal" class="waterside-modal">
+    <div class="waterside-modal-inner">
+      <a href="#" id="waterside-modal-close">x</a>
+      <div class="ws-floorplan-cta-form">
+        <div class="ws-floorplan-cta-form--header">
+          <img src="http://watersideeastlake.com/wp-content/uploads/2021/01/waterside.png" alt="waterside logo">
+        </div>
+        <div class="ws-floorplan-cta-form--body">
+          <div class="ws-floorplan-cta-form--copy">
+            <p>Get our downloadable Floor Plan Guide to compare and contrast all layout options. Where should we send this?</p>
+          </div>
+
+          <form id="ws-floorplan-cta-form" class="ws-floorplan-cta-form--form" action="" method="post">
+            <div class="ws-floorplan-cta-form--field">
+              <label for="name">
+                <input type="text" id="name" name="name" value="" placeholder="name">
+              </label>
+            </div>
+
+            <div class="ws-floorplan-cta-form--field">
+              <label for="email">
+                <input type="email" id="email" name="email" value="" placeholder="email address">
+              </label>
+            </div>
+
+            <button type="submit" name="submit">Send My Way</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php
+}
+add_action( 'wp_footer', 'waterside_footer_output' );
 
 ?>
