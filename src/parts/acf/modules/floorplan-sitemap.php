@@ -89,7 +89,7 @@
                 window.open(weatherly[ix].floorplan);
               }
             })))
-console.log(midway, fpD);
+
             fpD.forEach((fp, ix) => (fp.addEventListener('click', function() {
               console.log(midway[ix]);
               if (midway[ix] && midway[ix].floorplan) {
