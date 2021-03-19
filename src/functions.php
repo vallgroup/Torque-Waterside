@@ -172,24 +172,7 @@ function torque_enqueue_child_scripts() {
 
 add_action( 'wp_head', 'waterside_head_output' );
 function waterside_head_output() { ?>
-  <!-- Spectra -->
-  <script>
-  (function(r, o, y, g, b, i, v){
-    r.__spectraBaseUrl = y;r.__spectraConfig = b;
-    i = o.createElement('script');i.src = y+g;i.async = 1;
-    v = o.getElementsByTagName('head')[0];v.appendChild(i);
-  })(window, document, 'https://spectrajs.com', '/stats/', {
-    apiKey: "AIzaSyA9DJjj7F1nJvTlcOKusDp-BrDKwXJh9CU",
-    authDomain: "watersideeastlake.firebaseapp.com",
-    projectId: "watersideeastlake",
-    storageBucket: "watersideeastlake.appspot.com",
-    messagingSenderId: "900256249627",
-    appId: "1:900256249627:web:f6a5da99538d8c5d8bc5be",
-    measurementId: "G-3B7EBQF4DZ"
-  });
-  </script>
-  <!-- /End Of Spectra -->
-	<!-- Facebook Pixel Code -->
+  <!-- Facebook Pixel Code -->
 	<script>
 		!function(f,b,e,v,n,t,s)
 		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
