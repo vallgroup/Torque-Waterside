@@ -27,9 +27,10 @@ class Torque_Waterside_Controller {
 		try {
 
 			$to = $this->request['email'];
-			$subject = 'Email From Waterside';
+			$subject = 'Waterside Eastlake';
 			$headers[] = 'Content-Type: text/html; charset=UTF-8';
 			$headers[] = 'Bcc: '.get_field('bcc_email', 'options');
+			$headers[] = 'From: Waterside Eastlake <info@watersideeastlake.com>';
 			$body  = '<html>';
 			$body .= '<p>Hi '.$this->request['name'].',</p>';
 			$body .= '<p>Thank you for your interest in <b>Waterside Eastlake</b> and for requesting our comprehensive Floor Plan Guide.</p>';
@@ -48,7 +49,7 @@ class Torque_Waterside_Controller {
 			<a href="mailto:info@watersideeastlake.com">info@watersideeastlake.com</a><br />
 			<a href="watersideeastlake.com">watersideeastlake.com</a></p>';
 			$body .= '<p style="font-size: 90%;">Located within Seattle’s highly sought-after neighborhood of Eastlake, Waterside provides the perfect blend of chic sophistication and dynamic energy. This modern townhome community will offer 27 luxury, four-level residences available for purchase. Residents will have a diverse selection of more than 20 floor plan options and two distinctive interior finish packages, Copenhagen (white oak) and Whidbey (walnut). Situated in the heart of one of Seattle\'s most iconic neighborhoods, Waterside Eastlake blends modern sophistication, character, lakefront access, community and convenience.</p>';
-			$body .= '<p><img src="http://watersideeastlake.com/wp-content/uploads/2021/01/waterside-white.png" /></p>';
+			$body .= '<p><img src="http://watersideeastlake.com/wp-content/uploads/2021/01/waterside-white.png" width="200" /></p>';
 			$body .= '</html>';
 
 			if ( wp_mail( $to, $subject, $body, $headers ) ) {
